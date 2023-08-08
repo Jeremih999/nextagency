@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import styles from "./page.module.css"
+import Button from "../Button/Button";
 
 const links = [
     {
@@ -44,6 +45,8 @@ const NavBar = ()=>{
             {links.map(({id, title, url})=>(
                 <Link href={url} key={id}>{title}</Link>
             ))}
+
+            <Button Url={"#"} text={"Logout"} />
            </div>
         </div>
         

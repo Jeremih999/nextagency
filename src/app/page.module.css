@@ -1,0 +1,48 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* gap: 32px;    */
+}
+
+.textContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    flex: 30%;
+}
+
+.textContainer h1{
+    font-size: 72px;
+    font-weight: 800;
+    background: linear-gradient(to bottom, #53c28b, #bbb);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.textContainer p{
+    font-size: 24px;
+}
+
+.imageContainer{
+    width: 550px;
+    height: 500px;
+    position: relative;
+    animation: hero 3s infinite ease-in;
+    /* animation-iteration-count: infinite; */
+}
+
+@keyframes hero {
+    from{
+        transform: translateY(-20px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+.image{
+    position: absolute;
+    object-fit: contain;
+}

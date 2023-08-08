@@ -1,3 +1,64 @@
 .container{
-    background-color: aqua;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 64px;
+   padding-top: 24px;
+}
+
+.contactContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.imageContainer{
+    width: 400px;
+    height: 400px;
+    position: relative;
+    animation: upper 3s infinite ease-in;
+}
+
+@keyframes upper {
+    from {
+        transform: scale(1.05);
+    }
+    to {
+        transform: scale(0.95);
+    }
+}
+
+.image{
+    position: absolute;
+    object-fit: contain;
+}
+
+.contactForm{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 16px;
+    width: 400px;
+}
+
+.contactForm > input{
+    padding: 16px;
+    width: 100%;
+    background: #53c58a1c;
+    border: none;
+    border-bottom: 2px solid #53c58b;
+}
+
+.contactForm > input::placeholder{
+    color: #bbb;
+}
+
+.contactForm > textarea{
+    padding: 16px;
+    width: 100%;
+    background: none;
+    /* border: none; */
+    border: 2px solid #53c58b;
 }
