@@ -6,7 +6,15 @@ const about = ()=>{
     return (
         <div className={styles.container}>
         <div className={styles.imageContainer}>
-            <Image src='/aboutus.jpg' alt="Our team photo" />
+            <Image src='/aboutagency.jpg' alt="Our team photo" fill={true}  />
+        </div>
+        <div className={styles.textContainer}>
+           <div>
+
+           </div>
+           <div>
+            
+           </div>
         </div>
         </div>
     )
