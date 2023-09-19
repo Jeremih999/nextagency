@@ -1,0 +1,23 @@
+.gallery{
+    display: flex;
+    gap: 3rem;
+}
+
+
+.imageContainer{
+    width: 300px;
+    height: 400px;
+    position: relative;
+    border: 5px solid #ddd;
+    background-size: cover !important;
+}
+
+.imageContainer:nth-child(1){
+    background: url("/illustration.png");
+}
+
+.imageContainer h2{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}

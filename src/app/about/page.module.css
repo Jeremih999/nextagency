@@ -11,3 +11,35 @@
     object-position: center;
     filter: grayscale(100%);
 }
+
+.imgContainer{
+    position: relative;
+}
+
+.imgText{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: #53c28b;
+    padding: 1rem;
+    color: white;
+}
+
+.imgText p{
+    font-size: 20px;
+}
+
+.textContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    padding: 1rem;
+}
+
+.textContainer > div {
+    flex: 1;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100%;
+}
