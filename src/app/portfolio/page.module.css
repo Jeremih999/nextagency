@@ -9,15 +9,33 @@
     height: 400px;
     position: relative;
     border: 5px solid #ddd;
+    transition: all .3s ease-in;
     background-size: cover !important;
+}
+
+.imageContainer:hover{
+    border:5px solid #53c28b;
+}
+
+.imageContainer:hover  h2{
+    color: #53c28b;
 }
 
 .imageContainer:nth-child(1){
     background: url("/illustration.png");
 }
 
+.imageContainer:nth-child(2){
+    background: url("/websites.jpg");
+}
+
+.imageContainer:nth-child(3){
+    background: url("/apps.jpg");
+}
+
 .imageContainer h2{
     position: absolute;
     bottom: 20px;
     right: 20px;
+    transition: all .3s ease-in;
 }
