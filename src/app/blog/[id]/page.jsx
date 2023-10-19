@@ -1,53 +1,44 @@
 import React from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
-function BlogPost() {
+
+async function getData(id) {
+  
+    const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
+      cache : "no-store"
+    })
+  
+    if(!res.ok){
+      return notFound()
+    }
+  
+    return res.json()
+  
+  }
+
+async function BlogPost({params}) {
+
+    const data = await getData(params.id);
     return (
         <div className={styles.container}>
             <div className={styles.header}>
                 <div className={styles.text}>
-                    <h1>This is a title: <br />
-                        This is the second
+                    <h1>{data.title}:
                     </h1>
-                    <p>lorem ipsum dolet! ipsum is a dummy text use by developers to fill in text areas to visualize how
-                        it going to look like in the main websites when it is fully done.lorem ipsum dolet! ipsum is a
-                        lorem, lorem ipsum dolet! ipsum is a dummy text use by developers to fill in text areas to visualize how
-                        it going to look like in the main websites when it is fully done.lorem ipsum dolet! ipsum is a
-                        lorem</p>
+                    <p>{data.desc}</p>
                     <div className={styles.imageContainer}>
                         <Image src="/avatar3.jpg" alt="image" fill={true} className={styles.image} />
                     </div>
                 </div>
                 <div className={styles.imgContainer}>
-                    <Image src="/blog55.jpg" alt="image" fill={true} className={styles.image} />
+                    <Image src={data.image} alt="image" fill={true} className={styles.image} />
                 </div>
             </div>
             <div className={styles.body}>
                 <p>
-                lorem ipsum dolet! ipsum is a dummy text use by developers to fill in text areas to visualize how 
-                it going to look like in the main websites when it is fully done.lorem ipsum dolet! ipsum is a
-                lorem ipsum dolet! ipsum is a dummy text use by developers to fill in text areas to visualize how 
-                it going to look like in the main websites when it is fully done.lorem ipsum dolet! ipsum is a
-                lorem ipsum dolet! ipsum is a dummy text use by developers to fill in text areas to visualize how 
-                it going to look like in the main websites when it is fully done.lorem ipsum dolet! ipsum is a
-                lorem ipsum dolet! ipsum is a dummy text use by developers to fill in text areas to visualize how 
-                it going to look like in the main websites when it is fully done.lorem ipsum dolet! ipsum is a
-                <br />
-                <br />
-                lorem ipsum dolet! ipsum is a dummy text use by developers to fill in text areas to visualize how 
-                it going to look like in the main websites when it is fully done.lorem ipsum dolet! ipsum is a
-                lorem ipsum dolet! ipsum is a dummy text use by developers to fill in text areas to visualize how 
-                it going to look like in the main websites when it is fully done.lorem ipsum dolet! ipsum is a
-                <br />
-                <br />
-                lorem ipsum dolet! ipsum is a dummy text use by developers to fill in text areas to visualize how 
-                it going to look like in the main websites when it is fully done.lorem ipsum dolet! ipsum is a
-                lorem ipsum dolet! ipsum is a dummy text use by developers to fill in text areas to visualize how 
-                it going to look like in the main websites when it is fully done.lorem ipsum dolet! ipsum is alorem ipsum dolet! ipsum is a dummy text use by developers to fill in text areas to visualize how 
-                it going to look like in the main websites when it is fully done.lorem ipsum dolet! ipsum is a
-                lorem ipsum dolet! ipsum is a dummy text use by developers to fill in text areas to visualize how 
-                it going to look like in the main websites when it is fully done.lorem ipsum dolet! ipsum is a
+                {data.content}
                 </p>
             </div>
         </div>
