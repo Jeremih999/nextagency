@@ -18,6 +18,16 @@ async function getData(id) {
   
   }
 
+  export async function generateMetadata({ params }) {
+
+    const post = getData(params.id)
+  return {
+    title: post.title,
+    description: post.desc
+  }
+}
+
+
 async function BlogPost({params}) {
 
     const data = await getData(params.id);

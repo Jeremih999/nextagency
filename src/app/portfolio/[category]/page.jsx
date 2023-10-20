@@ -17,6 +17,15 @@ function getData(cat) {
 
 }
 
+export async function generateMetadata({ params }) {
+
+    const post = getData(params.category)
+  return {
+    title: post.category,
+    description: `this is our work under ${post.category}`
+  }
+}
+
 
 function Category({ params }) {
 

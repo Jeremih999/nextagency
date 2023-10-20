@@ -18,6 +18,11 @@ async function getData() {
 
 }
 
+export const metadata = {
+  title: 'Agency Blog ',
+  description: 'This is the blog page for the agency',
+}
+
  const blog = async ()=>{
 
   const data = await getData();
